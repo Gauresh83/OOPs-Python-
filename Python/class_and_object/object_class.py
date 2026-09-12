@@ -140,3 +140,265 @@ s1=Student("Rahul", 21)
 s2=Student("Rohit", 22)
 s1.introduce()
 s2.introduce()
+# Python internally behaves approximately like:
+# Student.introduce(s1)
+# Student.introduce(s2)
+
+# s1.introduce()
+#       ↓
+# self = s1
+
+# s2.introduce()
+#       ↓
+# self = s2
+
+# That's why self.name means:
+
+# "Get the name belonging to this particular object."
+
+# self is NOT a keyword
+
+# This is a common interviewer question.
+
+# You can technically write:
+
+class Student:
+
+    def introduce(this):
+        print(this)
+
+# and:
+
+s = Student()
+s.introduce()
+
+# It works.
+
+# But convention says use:
+
+# self
+
+# So:
+
+# self is a conventional parameter name representing the current instance. It is not a Python keyword.
+
+
+#Instance Variables
+# self.name
+# self.age
+#            Student class
+#                   │
+#         ┌─────────┴─────────┐
+#         ↓                   ↓
+
+#        s1                  s2
+#  ┌─────────────┐      ┌─────────────┐
+#  │ name Rahul  │      │ name Amit   │
+#  │ age 20      │      │ age 22      │
+#  └─────────────┘      └─────────────┘
+
+# Each object has its own instance data.
+# Class Variables
+
+# Now:
+
+class Student:
+
+    school = "ABC School"
+
+    def __init__(self, name):
+        self.name = name
+
+# Here:
+
+# school
+
+# is a class variable.
+
+# It belongs to the class rather than being independently created for every instance.
+
+#              Student
+#                 │
+#           school = ABC
+#                 │
+#         ┌───────┴───────┐
+#         ↓               ↓
+#        s1              s2
+#  name=Rahul        name=Amit
+
+# You can access:
+
+# Student.school
+# s1.school
+# s2.school
+# 10. How Python actually finds s1.school
+
+# This is where interview-level understanding starts.
+
+# Suppose:
+
+class Student:
+    school = "ABC"
+
+s1 = Student()
+
+# Then:
+
+# s1.school
+
+# Python approximately searches:
+
+# Does s1 have "school"?
+#        ↓
+#       NO
+#        ↓
+# Does Student have "school"?
+#        ↓
+#       YES
+#        ↓
+# Return "ABC"
+
+# This is related to Python's:
+
+# Attribute Lookup → MRO → inheritance
+
+# We'll go deeply into this.
+
+# 11. The __dict__ — VERY IMPORTANT
+
+# Python objects often have a dictionary containing their instance attributes.
+
+# Example:
+
+class Student:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Rahul", 21)
+
+print(s1.__dict__)
+
+# Output:
+
+# {
+#     'name': 'Rahul',
+#     'age': 21
+# }
+
+# So:
+
+# self.name = "Rahul"
+
+# roughly means that the object's attribute storage gets an entry for name.
+
+# This is one of the most useful things to understand internally.
+
+# 12. Class also has __dict__
+
+# Try:
+
+print(Student.__dict__)
+
+# You'll see a mapping containing things like:
+
+# school
+# __init__
+# __module__
+# __dict__
+# __weakref__
+# __doc__
+
+# So Python classes themselves store their attributes/methods.
+
+# 13. A method is basically a function stored in a class
+
+# Example:
+
+class Student:
+
+    def study(self):
+        print("Studying")
+
+# The function study is stored inside the class.
+
+# Student
+#    │
+#    ├── study
+#    ├── __init__
+#    └── ...
+
+# When you do:
+
+# s1.study()
+
+# Python finds study on the class and binds the object s1 to it.
+
+# That's why:
+
+# s1.study()
+
+# is conceptually related to:
+
+# Student.study(s1)
+
+# This mechanism is called method binding and is implemented using Python's descriptor protocol.
+
+# Don't worry—we'll unpack descriptors later.
+
+# 🔥 The first 5-minute mental model
+
+# Remember this:
+
+#                     CLASS
+#               ┌────────────────┐
+#               │ Student        │
+#               │                │
+#               │ class variables│
+#               │ methods        │
+#               └───────┬────────┘
+#                       │
+#               creates objects
+#                 ┌─────┴─────┐
+#                 ↓           ↓
+#               OBJECT       OBJECT
+#                 s1           s2
+#              ┌───────┐    ┌───────┐
+#              │name   │    │name   │
+#              │age    │    │age    │
+#              └───────┘    └───────┘
+
+# And:
+
+# s1 = Student()
+
+# roughly:
+
+# Student()
+#    ↓
+# __new__()
+#    ↓
+# object created
+#    ↓
+# __init__()
+#    ↓
+# object initialized
+#    ↓
+# s1 references object
+
+# And:
+
+# s1.method()
+
+# roughly:
+
+# s1.method()
+#     ↓
+# attribute lookup
+#     ↓
+# find method in class
+#     ↓
+# bind s1 as self
+#     ↓
+# method executes
