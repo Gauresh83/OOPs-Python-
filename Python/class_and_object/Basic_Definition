@@ -82,3 +82,25 @@ Here, the focus is the Employee object, which contains data (salary) and behavio
 Functional programming is useful when we want predictable, reusable functions and simple data transformations, while OOP is useful when we need to model entities that have data, behavior, and state.
 
 Also remember: Python supports both OOP and functional programming, so in real projects you can use both together.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
