@@ -1,0 +1,115 @@
+🐍 Basic Python Interview Questions
+Python Fundamentals
+What is Python?
+What are the features of Python?
+Why is Python called a high-level language?
+Is Python compiled or interpreted?
+What are Python's advantages and disadvantages?
+What is PEP 8?
+What is indentation in Python?
+What is a Python interpreter?
+What is a Python script?
+What is the difference between .py and .pyc files?
+Variables & Data Types
+What is a variable in Python?
+What are the different data types in Python?
+What is dynamic typing?
+What is type casting?
+What is the difference between mutable and immutable objects?
+Which Python data types are mutable?
+Which Python data types are immutable?
+What is None in Python?
+What is the difference between is and ==?
+What is the type() function?
+Strings
+What is a string in Python?
+Are strings mutable or immutable?
+What is string slicing?
+How do you reverse a string?
+What is the difference between split() and join()?
+What are f-strings?
+What is string formatting?
+Lists, Tuples & Sets
+What is a list?
+What is a tuple?
+What is a set?
+Difference between list and tuple?
+Difference between list and set?
+Why are tuples immutable?
+How do you remove duplicates from a list?
+Difference between append() and extend()?
+Difference between remove(), pop(), and del?
+What is list comprehension?
+What is set comprehension?
+Dictionaries
+What is a dictionary?
+How does a dictionary store data?
+Can dictionary keys be mutable?
+Difference between get() and []?
+How do you iterate over a dictionary?
+What are keys(), values(), and items()?
+Functions
+What is a function?
+Why do we use functions?
+Difference between parameter and argument?
+What are default arguments?
+What are keyword arguments?
+What are *args and **kwargs?
+What is a lambda function?
+What is recursion?
+What is the difference between return and print()?
+What is a higher-order function?
+What is a first-class function?
+Control Flow
+Difference between for and while loops?
+What is break?
+What is continue?
+What is pass?
+What is the difference between if, elif, and else?
+Memory & Python Internals
+How does memory management work in Python?
+What is garbage collection?
+What is reference counting?
+What is an object in Python?
+What is the difference between shallow copy and deep copy?
+What is the difference between copy() and deepcopy()?
+Exception Handling
+What is an exception?
+Difference between syntax error and exception?
+How does try-except work?
+What is finally?
+What is else in exception handling?
+How do you raise an exception using raise?
+How do you create a custom exception?
+Modules & Packages
+What is a module?
+What is a package?
+Difference between module and package?
+What is import?
+What is from ... import ...?
+What is __name__ == "__main__"?
+What is a virtual environment?
+⭐ Very Common Interview Questions
+
+If you're preparing for interviews, focus especially on:
+
+Mutable vs Immutable
+List vs Tuple
+List vs Set
+is vs ==
+append() vs extend()
+remove() vs pop() vs del
+*args vs **kwargs
+return vs print()
+Shallow Copy vs Deep Copy
+for vs while
+break vs continue vs pass
+try-except-finally
+List Comprehension
+Lambda Functions
+map(), filter(), reduce()
+__name__ == "__main__"
+Mutable vs Immutable arguments
+Python Memory Management
+Garbage Collection
+GIL (Global Interpreter Lock)
