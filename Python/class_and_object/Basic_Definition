@@ -1,0 +1,84 @@
+# Functional Programming — Simple Definition
+
+Functional programming is a programming style where we solve problems mainly by using functions to process data.
+# exampel->
+def add(a, b):
+    return a + b
+
+# Why do we use Functional Programming?
+
+->We use Functional Programming (FP) when we want to write code that is simple, predictable, reusable, and easier to test.
+
+Main reasons
+Easy to test — pure functions give the same output for the same input.
+Less side effects — functions avoid changing data outside themselves.
+Reusable code — small functions can be reused in different places.
+Easier to maintain — logic is divided into small, independent functions.
+Good for data processing — useful for filtering, mapping, transforming, and analyzing data.
+Better for parallel processing — independent functions can often run separately.
+
+# OOPs — Definition
+
+Object-Oriented Programming (OOPs) is a programming paradigm that organizes a program around objects, which contain data and methods to perform operations on that data.
+
+Simple way to understand:
+
+Object = Data + Behavior
+
+For example, a Car object can have:
+
+Data       → color, model, speed
+Behavior   → start(), stop(), accelerate()
+
+# The four main pillars of OOPs are:
+
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+# Difference Between Functional Programming and OOPs                                  
+
+| Functional Programming           | OOPs                                  |
+| -------------------------------- | ------------------------------------- |
+| Focuses on **functions**         | Focuses on **objects**                |
+| Functions process/transform data | Objects contain data and behavior     |
+| Tries to avoid changing state    | Objects can maintain and change state |
+| Prefers **immutability**         | Often uses **mutable objects**        |
+| Uses pure functions              | Uses methods                          |
+| Uses function composition        | Uses inheritance/composition          |
+| Good for data transformation     | Good for modeling real-world entities |
+| Usually avoids shared state      | Objects may share/manage state        |
+
+
+# Example
+
+# Functional Programming:
+
+def calculate_salary(salary, bonus):
+    return salary + bonus
+
+result = calculate_salary(50000, 5000)
+
+The main focus is the function:
+
+Input → Function → Output
+
+# OOP:
+
+class Employee:
+    def __init__(self, salary):
+        self.salary = salary
+
+    def calculate_salary(self, bonus):
+        return self.salary + bonus
+
+employee = Employee(50000)
+result = employee.calculate_salary(5000)
+
+Here, the focus is the Employee object, which contains data (salary) and behavior (calculate_salary).
+
+# Interview answer ⭐
+
+Functional programming is useful when we want predictable, reusable functions and simple data transformations, while OOP is useful when we need to model entities that have data, behavior, and state.
+
+Also remember: Python supports both OOP and functional programming, so in real projects you can use both together.
