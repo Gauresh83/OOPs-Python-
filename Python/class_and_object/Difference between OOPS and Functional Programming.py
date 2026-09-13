@@ -21,3 +21,22 @@ customer1.deposit(500)
 customer1.display_balance()
 customer1.withdraw(200)
 customer1.display_balance()
+
+# 2. Functional Programming (FP) in PythonDefinition: 
+# FP is a paradigm that treats computation as the evaluation of pure mathematical functions. 
+# It keeps data and behavior completely separate and strictly avoids changing data (immutability).
+# # Data is kept as a simple, unchangeable structure (tuple or dictionary)
+# #Example:
+account_data = {"owner": "Alice", "balance": 100}
+
+# Pure function: Does not change the input, returns a brand-new dictionary
+def deposit(account, amount):
+    new_balance = account["balance"] + amount
+    # Returning a completely new copy of the data
+    return {"owner": account["owner"], "balance": new_balance}
+
+# Usage
+new_account_data = deposit(account_data, 50)
+
+print(account_data)     # Output: {'owner': 'Alice', 'balance': 100} (Original unchanged)
+print(new_account_data) # Output: {'owner': 'Alice', 'balance': 150} (New data created)

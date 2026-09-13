@@ -1,0 +1,41 @@
+🐍 Basic & Easy Python OOPs Interview Questions
+1.What is OOPs?
+2.What are the main pillars of OOPs?
+3.What is a class?
+4.What is an object?
+5.What is the difference between a class and an object?
+6.How do you create a class in Python?
+7.How do you create an object in Python?
+8.What is self in Python?
+9.What is a constructor?
+10.What is __init__()?
+11.What are instance variables?
+12.What are class variables?
+13->What is an instance method?
+14->What is a class method?
+15->What is a static method?
+16->What is the difference between instance, class, and static methods?
+17->What is inheritance?
+18->Why do we use inheritance?
+19->What are the different types of inheritance?
+20->Does Python support multiple inheritance?
+21->What is method overriding?
+22->Does Python support method overloading?
+23->What is polymorphism?
+24->What is encapsulation?
+25->What is abstraction?
+26->What is an abstract class?
+27->What is an abstract method?
+28->Can we create an object of an abstract class?
+29->What is super()?
+30->What is MRO (Method Resolution Order)?
+31->What are magic/dunder methods?
+32->What is operator overloading?
+33->What is the difference between __str__() and __repr__()?
+34->What is @classmethod?
+35->What is @staticmethod?
+36->What is @property?
+37->What are public, protected, and private members in Python?
+38->What is name mangling?
+39->What is duck typing?
+40->What is the difference between inheritance and composition?
